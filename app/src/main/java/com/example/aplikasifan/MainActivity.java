@@ -67,23 +67,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
         speedFan = (SeekBar)findViewById(R.id.seekBar);
+        speedFan.setMax(3);
         speedFan.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-//                animasiFan.setDuration(speed[progress]);
-//                animasiFan.start();
-                if(progress > 80 && statusFan.isChecked()){
-                    animasiFan.setDuration(speed[3]);
-                    animasiFan.start();
-                } else if (progress > 40 && statusFan.isChecked()){
-                    animasiFan.setDuration(speed[2]);
-                    animasiFan.start();
-                } else if (progress > 1 && statusFan.isChecked()){
-                    animasiFan.setDuration(speed[1]);
-                    animasiFan.start();
-                } else{
-                    animasiFan.end();
-                }
+                  index = progress;
+                  animasiFan.setDuration(speed[index]);
+                  animasiFan.start();
+//                if(progress > 80 && statusFan.isChecked()){
+//                    animasiFan.setDuration(speed[3]);
+//                    animasiFan.start();
+//                } else if (progress > 40 && statusFan.isChecked()){
+//                    animasiFan.setDuration(speed[2]);
+//                    animasiFan.start();
+//                } else if (progress > 1 && statusFan.isChecked()){
+//                    animasiFan.setDuration(speed[1]);
+//                    animasiFan.start();
+//                } else{
+//                    animasiFan.end();
+//                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
