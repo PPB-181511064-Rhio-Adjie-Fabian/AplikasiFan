@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Aplikasi fan</string>
+    <string name="statusFan">OFF</string>
+    <string name="title">SPEED CONTROLLER</string>
+</resources>
